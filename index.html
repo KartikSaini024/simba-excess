@@ -187,12 +187,12 @@ function getTheme(excess) {
 }
 
 const COVER_META = {
-  full:         { label: 'Full Cover',         icon: 'ti-shield-check', badge: { bg: '#e8f0fe', color: '#1d4ed8' }, features: ['Full vehicle damage', 'No excess to pay', 'Premium roadside assist', 'Windscreen and tyres'] },
-  everyday500:  { label: 'Everyday Cover',      icon: 'ti-car',          badge: { bg: '#fef9c3', color: '#854d0e' }, features: ['Vehicle damage covered', 'Standard roadside assist', 'Windscreen included'] },
-  everyday1500: { label: 'Everyday Cover',      icon: 'ti-car',          badge: { bg: '#ffedd5', color: '#9a3412' }, features: ['Vehicle damage covered', 'Basic roadside assist', 'Windscreen included'] },
-  basic5480:    { label: 'Basic Cover',         icon: 'ti-shield-half',  badge: { bg: '#fee2e2', color: '#991b1b' }, features: ['Vehicle damage covered', 'High excess applies'] },
-  basic6480:    { label: 'Basic Cover',         icon: 'ti-shield-half',  badge: { bg: '#fee2e2', color: '#991b1b' }, features: ['Vehicle damage covered', 'High excess applies'] },
-  tyre:         { label: 'Tyre and Windscreen', icon: 'ti-tire',         badge: { bg: '#f0fdf4', color: '#166534' }, features: ['Tyre damage covered', 'Windscreen covered', 'No other vehicle cover'] },
+  full:         { label: 'Full Cover',         icon: 'ti-shield-check', badge: { bg: '#e8f0fe', color: '#1d4ed8' }, features: ['Vehicle damage covered*', 'No excess to pay', 'Windscreen and tyres'] },
+  everyday500:  { label: 'Everyday Cover',      icon: 'ti-car',          badge: { bg: '#fef9c3', color: '#854d0e' }, features: ['Vehicle damage covered*', 'Windscreen and tyres'] },
+  everyday1500: { label: 'Everyday Cover',      icon: 'ti-car',          badge: { bg: '#ffedd5', color: '#9a3412' }, features: ['Vehicle damage covered*', 'Windscreen and tyres'] },
+  basic5480:    { label: 'Basic Cover',         icon: 'ti-shield-half',  badge: { bg: '#fee2e2', color: '#991b1b' }, features: ['Vehicle damage covered*', 'Full excess applies'] },
+  basic6480:    { label: 'Basic Cover',         icon: 'ti-shield-half',  badge: { bg: '#fee2e2', color: '#991b1b' }, features: ['Vehicle damage covered*', 'Full excess applies'] },
+  tyre:         { label: 'Tyre and Windscreen', icon: 'ti-tire',         badge: { bg: '#f0fdf4', color: '#166534' }, features: ['Tyre damage covered', 'Windscreen covered', 'No other damage covered'] },
 };
 
 function staffBadge(type) {
@@ -258,7 +258,7 @@ function showCustomer() {
     const priceDisplay  = r.rate === 0   ? '$0' : '$' + r.rate;
 
     return `<div class="cover-card ${isRec ? 'highlighted' : ''}" style="background:${t.bg};border-color:${isRec ? '#4361ee' : t.border};">
-      ${isRec ? '<div class="rec-badge"><i class="ti ti-star" style="font-size:10px;"></i> Best cover</div>' : ''}
+      ${isRec ? '<div class="rec-badge"><i class="ti ti-star" style="font-size:10px;"></i></div>' : ''}
       <div class="card-icon" style="background:${t.cardIconBg};">
         <i class="ti ${meta.icon}" style="color:${t.cardIconColor};" aria-hidden="true"></i>
       </div>
